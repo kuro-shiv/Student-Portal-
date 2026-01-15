@@ -5,6 +5,14 @@ import Header from '../components/Header'
 import StudentProfile from './StudentProfile'
 import ExploreCourses from './ExploreCourses'
 import '../styles.css'
+import bcrypt from 'bcryptjs'
+
+let useMockDB = false;
+// Exported function to set mock mode
+router.setMockMode = (mock) => { useMockDB = mock; };
+
+// Enable mock mode on courses, students, submissions, and admin routes
+require('./routes/admin').setMockMode(true);
 
 export default function StudentDashboard(){
   const navigate = useNavigate()
@@ -509,5 +517,23 @@ export default function StudentDashboard(){
       </div>
     </div>
   )
-}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}  return res.json({ student: { rollId: rollId } }); // Correct response format  mockDB.students.push(student);    };    // ... other fields    rollId: rollId,    password: hashedPassword, // Store hashed password    name: name || uid,    username: uid,    userId: uid,    id: String(mockDB.students.length + 1),  const student = {    const hashedPassword = await bcrypt.hash(password, 10);  // Hash password consistentlyif (useMockDB) {}
